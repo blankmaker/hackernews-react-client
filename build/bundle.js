@@ -123,8 +123,8 @@
 	  }
 
 	  _createClass(App, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
 	      var _this = this;
 
 	      var stuff = undefined;
@@ -149,6 +149,7 @@
 	App.state = {
 	  ids: []
 	};
+
 	_reactDom2['default'].render(_react2['default'].createElement(App, null), document.getElementById('app'));
 
 /***/ },
