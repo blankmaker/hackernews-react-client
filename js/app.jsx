@@ -39,10 +39,11 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
-      <div>
-        <p>Welcome? to the beginnings of Hacker News. Let build.</p>
+      <div className="body">
+        <div className="header">
+          <p>Welcome? to the beginnings of Hacker News. Let build.</p>
+        </div>
       </div>
     );
   }
