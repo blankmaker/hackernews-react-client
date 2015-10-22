@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import Firebase from 'firebase';
 import Rebase from 're-base';
+import '../css/styles.scss';
 
 const HackerAPIBase = Rebase.createClass('https://hacker-news.firebaseio.com/v0/');
 // const HackerAPI = new Firebase('https://hacker-news.firebaseio.com/v0/');
@@ -39,10 +40,11 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
-      <div>
-        <p>Welcome? to the beginnings of Hacker News. Let build.</p>
+      <div className="body">
+        <div className="header">
+          <p>Welcome? to the beginnings of Hacker News. Let build.</p>
+        </div>
       </div>
     );
   }
