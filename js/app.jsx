@@ -15,7 +15,7 @@ class App extends React.Component {
     this.firebaseRef = HackerAPIBase.fetch('topstories', {
       context: this,
       asArray: true,
-      then: this.fetchStoryData
+      then: this.fetchStoryData,
     });
     // this.firebaseRef = new Firebase('https://hacker-news.firebaseio.com/v0/topstories');
     // this.firebaseRef.on('value', (dataSnapshot) => {
@@ -49,4 +49,3 @@ class App extends React.Component {
 
 
 ReactDOM.render(<App />, document.getElementById('app'));
-   
