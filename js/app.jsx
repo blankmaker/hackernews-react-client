@@ -39,6 +39,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <p>Welcome? to the beginnings of Hacker News. Let build.</p>
@@ -46,6 +47,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 ReactDOM.render(<App />, document.getElementById('app'));
