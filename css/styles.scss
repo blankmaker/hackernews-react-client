@@ -1,3 +1,7 @@
-.body {
-  border: 1px solid blue;
+@import './reset.scss';
+
+.container {
+  padding: 15px;
+  margin: 0 auto;
+  background: #F60;
 }

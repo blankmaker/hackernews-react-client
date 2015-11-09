@@ -41,7 +41,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="body">
+      <div className="container">
         <div className="header">
           <p>Welcome? to the beginnings of Hacker News. Let build.</p>
         </div>
