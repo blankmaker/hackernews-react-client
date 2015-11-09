@@ -1,7 +1,14 @@
-@import './reset.scss';
+@import './reset';
+@import './fonts';
+@import './components/Header';
+@import './components/StoriesPanel';
 
-.container {
-  padding: 15px;
+body {
+  padding: 1.5rem;
   margin: 0 auto;
-  background: #F60;
 }
+
+.hn-Container {
+  width: 100%;
+}
+

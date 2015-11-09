@@ -41,9 +41,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="header">
-          <p>Welcome? to the beginnings of Hacker News. Let build.</p>
+      <div className="hn-Container">
+        <div className="hn-Header">
+          <h1>Hacker News</h1>
+        </div>
+        <div className="hn-StoriesPanel">
         </div>
       </div>
     );
