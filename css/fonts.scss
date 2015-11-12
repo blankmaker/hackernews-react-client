@@ -1,6 +1,8 @@
+@import './variables'; 
+
 h1 {
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 1.3125rem;
+  font-family: $default-font-family;
+  font-size: $large-font-size;
   line-height: 2rem;
   font-weight: bold;
 }

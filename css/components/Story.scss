@@ -1,0 +1,40 @@
+@import '../variables.scss';
+
+
+.hn-StoryList {
+  list-style-type: none;
+  counter-reset: numbered-list;
+  
+  &Item {
+    font-family: $default-font-family;
+    padding: 1.5rem;
+
+
+    &:before {
+      counter-increment: numbered-list;
+      content: counter(numbered-list) ".";
+      font-size: $large-font-size;
+      float: left;
+    }
+
+    &__Subcontainer {
+      margin-left: 2rem;
+    }
+
+    &__Title {
+      font-size: $medium-font-size;
+      margin-right: 1rem;
+    }
+
+    &__Url {
+      font-size: $small-font-size;
+      color: $grey-color;
+    }
+
+    &__Details {
+      display: block;
+      color: $grey-color;
+      margin-top: .5rem;
+    }
+  }
+}

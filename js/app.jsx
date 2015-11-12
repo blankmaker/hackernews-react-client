@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Firebase from 'firebase';
 import Rebase from 're-base';
 import '../css/styles.scss';
+import Header from './components/Header.jsx';
+import Story from './components/Story.jsx';
 
 const HackerAPIBase = Rebase.createClass('https://hacker-news.firebaseio.com/v0/');
-// const HackerAPI = new Firebase('https://hacker-news.firebaseio.com/v0/');
 
 class App extends React.Component {
   constructor(props) {
@@ -18,16 +18,11 @@ class App extends React.Component {
       asArray: true,
       then: this.fetchStoryData,
     });
-    // this.firebaseRef = new Firebase('https://hacker-news.firebaseio.com/v0/topstories');
-    // this.firebaseRef.on('value', (dataSnapshot) => {
-    //   this.items = dataSnapshot.val();
-    //   this.setState({
-    //     items: this.items,
-    //   });
   }
 
   fetchStoryData(ids) {
-    ids.forEach((id) => {
+    this.setState({ storyIds: ids.slice(0,10) });
+    ids.slice(0, 10).forEach((id) => {
       HackerAPIBase.bindToState('item/' + id, {
         context: this,
         state: 'storyID_' + id,
@@ -39,13 +34,19 @@ class App extends React.Component {
     HackerAPIBase.removeBinding(this.firebaseRef);
   }
 
+  // restrict number of stories to 30
+  // make it possible to load more
+
   render() {
+    console.log(this.state);
     return (
       <div className="hn-Container">
-        <div className="hn-Header">
-          <h1>Hacker News</h1>
-        </div>
+        <Header />
         <div className="hn-StoriesPanel">
+          <ol className="hn-StoryList">
+            <Story />
+            <Story />
+          </ol>
         </div>
       </div>
     );
