@@ -9,7 +9,6 @@
     font-family: $default-font-family;
     padding: 1rem 1.5rem;
 
-
     &:before {
       counter-increment: numbered-list;
       content: counter(numbered-list) ".";
@@ -24,6 +23,7 @@
     &__Title {
       font-size: $medium-font-size;
       margin-right: 1rem;
+      color: #000000;
     }
 
     &__Url {

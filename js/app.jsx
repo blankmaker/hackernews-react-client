@@ -21,8 +21,8 @@ class App extends React.Component {
   }
 
   fetchStoryData(ids) {
-    this.setState({ storyIds: ids.slice(0,10) });
-    ids.slice(0, 10).forEach((id) => {
+    this.setState({ storyIds: ids.slice(0,30) });
+    ids.slice(0, 30).forEach((id) => {
       HackerAPIBase.bindToState('item/' + id, {
         context: this,
         state: 'storyID_' + id,
