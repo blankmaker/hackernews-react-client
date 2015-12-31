@@ -38,14 +38,12 @@ class App extends React.Component {
   // make it possible to load more
 
   render() {
-    console.log(this.state);
     return (
       <div className="hn-Container">
         <Header />
         <div className="hn-StoriesPanel">
           <ol className="hn-StoryList">
-            <Story />
-            <Story />
+            {this.state ? this.state.storyIds.map((storyId) => <Story key={storyId} story={this.state['storyID_' + storyId]}/>) : null}
           </ol>
         </div>
       </div>

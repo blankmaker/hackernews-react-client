@@ -5,16 +5,22 @@ export default class Story extends React.Component {
     super(props);
   }
 
+  // need to shorten URL
   render() {
-    return (
-      <li className="hn-StoryListItem">
-        <div className="hn-StoryListItem__Subcontainer">
-          <span className="hn-StoryListItem__Title">Six years of Go</span>
-          <span className="hn-StoryListItem__Url">(golang.org)</span>
-          <span className="hn-StoryListItem__Details">184 points by jaxondu 2 hours ago | 101 comments</span>
-        </div>
-      </li>
-    );
+    const {story} = this.props;
+    if (story) {
+      return (
+        <li className="hn-StoryListItem">
+          <div className="hn-StoryListItem__Subcontainer">
+            <span className="hn-StoryListItem__Title">{story.title}</span>
+            <span className="hn-StoryListItem__Url">{story.url}</span>
+            <span className="hn-StoryListItem__Details">{story.score} points by {story.by} 2 hours ago | {story.kids.length} comments</span>
+          </div>
+        </li>
+      );
+    } else {
+      return null;
+    }
   }
 }
 
