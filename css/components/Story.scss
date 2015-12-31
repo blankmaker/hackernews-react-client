@@ -7,7 +7,7 @@
   
   &Item {
     font-family: $default-font-family;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
 
 
     &:before {
@@ -18,7 +18,7 @@
     }
 
     &__Subcontainer {
-      margin-left: 2rem;
+      margin-left: 2.5rem;
     }
 
     &__Title {
