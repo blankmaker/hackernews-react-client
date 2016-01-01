@@ -12,20 +12,20 @@ export default class Story extends React.Component {
   }
 
   render() {
-    const {story} = this.props;
-    if (story) {
-      return (
-        <li className="hn-StoryListItem">
-          <div className="hn-StoryListItem__Subcontainer">
-            <a className="hn-StoryListItem__Title" href={story.url}>{story.title}</a>
-            <a className="hn-StoryListItem__Url" href={story.url}>{this.getDomain(story.url)}</a>
-            <span className="hn-StoryListItem__Details">{story.score} points by {story.by} {moment.utc(story.time * 1000).fromNow()} hours ago | {story.kids ? story.kids.length : 0} comments</span>
-          </div>
-        </li>
-      );
-    } else {
-      return null;
-    }
+    const {content} = this.props;
+
+    return (
+      <li className="hn-StoryListItem">
+        <div className="hn-StoryListItem__Subcontainer">
+          <a className="hn-StoryListItem__Title" href={content.url}>{content.title}</a>
+          <a className="hn-StoryListItem__Url" href={content.url}>{this.getDomain(content.url)}</a>
+          <span className="hn-StoryListItem__Details">{content.score} points by {content.by} {moment.utc(content.time * 1000).fromNow()} hours ago | {content.kids ? content.kids.length : 0} comments</span>
+        </div>
+      </li>
+    );
+    // } else {
+    //   return null;
+    // }
   }
 }
 
