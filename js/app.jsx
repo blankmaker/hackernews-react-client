@@ -4,6 +4,7 @@ import '../css/styles.scss';
 import Header from './components/Header.jsx';
 import Story from './components/Story.jsx';
 import $ from 'jquery';
+import StoryStore from './stores/StoryStore.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,36 +12,20 @@ class App extends React.Component {
     this.state = {stories: []};
   }
 
-
   componentDidMount() {
-    const idUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json';
-
-    $.get(idUrl, (response) => {
-      for (let i = 0; i < 15; i++) {
-        this.fetchStoryData(response[i]);
-      }
+    this.unsubscribe = StoryStore.listen((payload) => {
+      this.setState({stories: payload});
     });
   }
 
-  fetchStoryData(id) {
-    const storyUrl = 'https://hacker-news.firebaseio.com/v0/item/' + id + '.json';
-
-    $.get(storyUrl, (response) => {
-      this.setState({stories: this.state.stories.concat(response)});
-    });
+  componentWillUnmount() {
+    this.unsubscribe();
   }
-
-  // componentWillUnmount() {
-  //   HackerAPIBase.removeBinding(this.firebaseRef);
-  // }
 
   // restrict number of stories to 30
   // make it possible to load more
-
   render() {
-    // console.log(this.state);
     const {stories} = this.state;
-
     return (
       <div className="hn-Container">
         <Header />
