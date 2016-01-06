@@ -1,16 +1,27 @@
-import React from 'react/addons';
-import chai from 'chai';
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
+/* global describe, it, beforeEach, afterEach */
 
-let { assert, expect } = chai,
-    { TestUtils } = React.addons;
+import {
+  React,
+  expect,
+  sinon,
+  TestUtils,
+} from '../../../test/helpers.js';
 
-chai.should();
-chai.use(sinonChai);
+import Header from '../Header.jsx';
 
-describe("test", () => {
-  it('should work', () => {
-    expect(1).to.equal(1);
+describe('Header component', () => {
+  let sandbox, header;
+  beforeEach(() => {
+    sandbox = sinon.sandbox.create();
+    header = TestUtils.renderIntoDocument(<Header />);
+  });
+
+  afterEach(() => {
+    sandbox.restore();
+  });
+
+  it('should render onto page', () => {
+    let foundClass = TestUtils.scryRenderedDOMComponentsWithClass(header, 'hn-Header');
+    expect(foundClass.length).to.equal(1);
   });
 });
