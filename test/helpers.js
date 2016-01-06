@@ -1,4 +1,5 @@
 import React from 'react/addons';
+import ReactDOM from 'react-dom';
 import chai from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
@@ -11,6 +12,7 @@ chai.use(sinonChai);
 
 export {
   React,
+  ReactDOM,
   chai,
   sinon,
   sinonChai,
