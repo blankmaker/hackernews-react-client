@@ -7,7 +7,7 @@
   
   &Item {
     font-family: $default-font-family;
-    padding: 1rem 1.5rem;
+    padding: 1rem 0;
 
     &:before {
       counter-increment: numbered-list;
