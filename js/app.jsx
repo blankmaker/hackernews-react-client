@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import '../css/styles.scss';
 import Header from './components/Header.jsx';
 import Story from './components/Story.jsx';
-import $ from 'jquery';
 import StoryStore from './stores/StoryStore.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {stories: []};
+    this.state = {
+      stories: [],
+      index: 30,
+    };
   }
 
   componentDidMount() {
@@ -22,19 +24,25 @@ class App extends React.Component {
     this.unsubscribe();
   }
 
-  // restrict number of stories to 30
-  // make it possible to load more
+  updateIndex() {
+    let {index} = this.state;
+    this.setState({index: index + 30});
+  }
+
   render() {
-    const {stories} = this.state;
+    let {stories, index} = this.state;
+    stories = stories.slice(0, index);
+
     return (
-      <div className="hn-Container">
+      <main className="hn-Container">
         <Header />
-        <div className="hn-StoriesPanel">
+        <section className="hn-StoriesPanel">
           <ol className="hn-StoryList">
             { stories.map((story) => <Story key={story.id} content={story} />) }
           </ol>
-        </div>
-      </div>
+          {index < 150 ? <div onClick={this.updateIndex.bind(this)}>More</div> : null}
+        </section>
+      </main>
     );
   }
 }

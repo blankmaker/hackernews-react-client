@@ -13,9 +13,9 @@ const StoryStore = Reflux.createStore({
   fetchStories() {
     const idUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json';
     $.get(idUrl, (response) => {
-      for (let i = 0; i < 15; i++) {
-        this.fetchStoryData(response[i]);
-      }
+      response.slice(0,151).forEach((id) => {
+        this.fetchStoryData(id);
+      });
     });
   },
 
@@ -26,9 +26,9 @@ const StoryStore = Reflux.createStore({
   fetchStoryData(id) {
     const storyUrl = 'https://hacker-news.firebaseio.com/v0/item/' + id + '.json';
 
-    $.get(storyUrl, (response) => {
-      response.parsedDomain = this.parseUrl(response.url);
-      this.storyData.push(response);
+    $.get(storyUrl, (story) => {
+      story.parsedDomain = story.url ? this.parseUrl(story.url) : 'blankmaker.com';
+      this.storyData.push(story);
       this.trigger(this.storyData);
     });
   },
