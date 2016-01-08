@@ -40,7 +40,7 @@ class App extends React.Component {
           <ol className="hn-StoryList">
             { stories.map((story) => <Story key={story.id} content={story} />) }
           </ol>
-          {index < 150 ? <div onClick={this.updateIndex.bind(this)}>More</div> : null}
+          {index < 150 ? <div className="hn-StoriesPanel__MoreLink" onClick={this.updateIndex.bind(this)}>More &darr;</div> : null}
         </section>
       </main>
     );

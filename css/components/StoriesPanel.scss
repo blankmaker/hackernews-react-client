@@ -1,5 +1,22 @@
+@import '../variables.scss';
+
 .hn-StoriesPanel {
   background:  #F6F6EF;
   height: 100%;
   padding: 1rem 1.5rem;
+
+  &__MoreLink {
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
+    font-family: $default-font-family;
+    font-size: $medium-font-size;
+    cursor: pointer;
+    transition: background-color .1s ease-out, color .1s ease-out;
+
+    &:hover {
+      color: #FFFFFF;
+      background-color: $grey-color;
+    }
+  }
 }
