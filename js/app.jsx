@@ -42,6 +42,9 @@ class App extends React.Component {
           </ol>
           {index < 150 ? <div className="hn-StoriesPanel__MoreLink" onClick={this.updateIndex.bind(this)}>More &darr;</div> : null}
         </section>
+        <footer className="hn-Footer">
+          Made with love by <a href="https://github.com/blankmaker/hackernews-react-client">blankmaker</a>
+        </footer>
       </main>
     );
   }
