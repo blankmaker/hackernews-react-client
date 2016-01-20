@@ -1,7 +1,7 @@
 # hackernews-react
 [![Build Status](https://travis-ci.org/blankmaker/hackernews-react-client.svg?branch=master)](https://travis-ci.org/blankmaker/hackernews-react-client)
 
-Hacker News client built with React, Reflux and Hacker News's API (via AJAX)
+A v1 Hacker News client built with React, Reflux and Hacker News's API (via AJAX). This first iteration is to mainly explore using application setup (i.e. using Webpack, setting up SASS, and testing with Mocha)
 
 ### To get started: 
 * Install dependencies `npm install`
@@ -11,6 +11,5 @@ Hacker News client built with React, Reflux and Hacker News's API (via AJAX)
 * `npm run test`
 
 ### To do: 
-* Better styling
-* Deployment
-* Additions to the stories
+* Better styling... like hella better. 
+* Head over to the issues tab for more..
