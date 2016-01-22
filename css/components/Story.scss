@@ -7,12 +7,13 @@
   
   &Item {
     font-family: $default-font-family;
-    padding: 1rem 0;
+    padding: .5rem 0;
 
     &:before {
       counter-increment: numbered-list;
       content: counter(numbered-list) ".";
-      font-size: $large-font-size;
+      font-size: $normal-font-size;
+      line-height: $normal-line-height;
       float: left;
     }
 
@@ -21,20 +22,23 @@
     }
 
     &__Title {
-      font-size: $medium-font-size;
+      font-size: $normal-font-size;
+      line-height: $normal-line-height;
       margin-right: 1rem;
       color: #000000;
     }
 
     &__Url {
-      font-size: $small-font-size;
+      font-size: $x-small-font-size;
       color: $grey-color;
     }
 
     &__Details {
+      font-size: $small-font-size;
+      line-height: $small-line-height;
       display: block;
       color: $grey-color;
-      margin-top: .5rem;
+      margin-top: .25rem;
     }
   }
 }
